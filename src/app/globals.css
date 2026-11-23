@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+:root {
+  --font-scale: 1rem;
+  --bg-primary: #f8fafc;
+  --bg-card: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --border-subtle: #cbd5e1;
+  --border-strong: #64748b;
+  --accent: #1d4ed8;
+  --accent-hover: #1e40af;
+  --focus-ring: #2563eb;
+}
+
+html {
+  font-size: var(--font-scale);
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High Contrast Mode Overrides */
+html.high-contrast,
+.high-contrast body {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+  color-scheme: dark;
+}
+
+.high-contrast main,
+.high-contrast section,
+.high-contrast article,
+.high-contrast header,
+.high-contrast nav,
+.high-contrast footer,
+.high-contrast aside,
+.high-contrast div {
+  background-color: #000000 !important;
+}
+
+.high-contrast p,
+.high-contrast span,
+.high-contrast li,
+.high-contrast label {
+  color: #ffff00 !important;
+}
+
+.high-contrast h1,
+.high-contrast h2,
+.high-contrast h3,
+.high-contrast h4 {
+  color: #ffffff !important;
+  border-color: #ffff00 !important;
+}
+
+.high-contrast a {
+  color: #00ffff !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+}
+
+.high-contrast a:hover,
+.high-contrast a:focus {
+  background-color: #00ffff !important;
+  color: #000000 !important;
+  outline: 3px solid #ffff00 !important;
+}
+
+.high-contrast button {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+  border: 2px solid #ffff00 !important;
+}
+
+.high-contrast button:hover,
+.high-contrast button:focus-visible {
+  background-color: #ffff00 !important;
+  color: #000000 !important;
+  outline: 3px solid #00ffff !important;
+}
+
+.high-contrast button[aria-pressed="true"],
+.high-contrast button.is-active {
+  background-color: #ffff00 !important;
+  color: #000000 !important;
+  font-weight: 800 !important;
+  border: 3px solid #ffffff !important;
+}
+
+.high-contrast svg {
+  color: currentColor !important;
+  stroke: currentColor !important;
+}
+
+.high-contrast .card,
+.high-contrast [data-card="true"] {
+  background-color: #050505 !important;
+  border: 2px solid #ffff00 !important;
+  box-shadow: none !important;
+}
+
+.high-contrast .alert-box {
+  background-color: #000000 !important;
+  border: 3px solid #ffff00 !important;
+}
+
+.high-contrast .badge {
+  background-color: #000000 !important;
+  color: #00ffff !important;
+  border: 1px solid #00ffff !important;
+}
+
+/* Global Focus Visible Styling (WCAG 2.1 AAA requirement) */
+:focus-visible {
+  outline: 3px solid #2563eb !important;
+  outline-offset: 3px !important;
+  border-radius: 4px;
+}
+
+.high-contrast :focus-visible {
+  outline: 3px solid #00ffff !important;
+  outline-offset: 3px !important;
+}
+
+/* Skip link styling */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  background-color: #1e3a8a;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 0.375rem;
+  border: 2px solid #ffffff;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  transition: top 0.2s ease-in-out;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.high-contrast .skip-link {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+  border: 3px solid #00ffff !important;
+}
+
+/* Text measure for low vision readability */
+.reading-measure {
+  max-width: 70ch;
+}
